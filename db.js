@@ -1,9 +1,14 @@
 const Sequelize = require('sequelize');
 const conn = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acme_db_numbers');
 
-const { INTEGER } = Sequelize.DataTypes;
+const { INTEGER, UUID, UUIDV4 } = Sequelize.DataTypes;
 
 const Winner = conn.define('winner', {
+  id: {
+    type: UUID,
+    defaultValue: UUIDV4,
+    primaryKey: true
+  },
   num: INTEGER
 });
 
