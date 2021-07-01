@@ -11,6 +11,7 @@ const _Nav = (props)=> {
       <Link to='/all' className={ pathname === '/all' ? 'selected': ''}>All ({ stats.all })</Link>
       <Link to='/odd' className={ pathname === '/odd' ? 'selected': '' }>Odd ({ stats.odd })</Link>
       <Link to='/even' className={ pathname === '/even' ? 'selected': ''}>Even ({ stats.even })</Link>
+      <Link to='/create' className={ pathname === '/create' ? 'selected': ''}>Create</Link>
     </nav>
   );
 };

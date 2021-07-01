@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import Home from './Home';
 import Nav from './Nav';
 import Numbers from './Numbers';
-import { Route } from 'react-router-dom';
+import Create from './Create';
+import Edit from './Edit';
+import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
@@ -16,7 +18,11 @@ class _App extends Component{
         <Route component={ Nav } />
         <main>
           <Route path='/' component={ Home } exact/>
-          <Route path='/:filter' component={ Numbers }/>
+          <Switch>
+            <Route path='/create' component={ Create }/>
+            <Route path='/:filter' component={ Numbers } exact/>
+          </Switch>
+          <Route path='/edit/:id' component={ Edit } />
         </main>
       </div>
     );
